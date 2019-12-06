@@ -60,11 +60,11 @@ impl ViewRef {
 
     // weak open var delegate: MTKViewDelegate?
     pub fn delegate(&self) -> Option<MTKViewDelegate> {
-        unimplemented!()
+        unsafe { msg_send![self, delegate] }
     }
 
     pub fn set_delegate(&self, new_value: Option<MTKViewDelegate>) {
-        unimplemented!()
+        unsafe { msg_send![self, setDelegate: new_value] }
     }
 
     pub fn device(&self) -> Option<&DeviceRef> {

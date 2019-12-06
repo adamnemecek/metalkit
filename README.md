@@ -1,7 +1,9 @@
 # metalkit
 
-Rust wrapper around. 
+Rust wrapper for Apple [MetalKit](https://developer.apple.com/documentation/metalkit).
 
-* Based on objrs
-* sorbet cocoa: `protocol` implementation
-* 
+Based on [metal](https://github.com/gfx-rs/metal-rs).
+
+```rust
+
+```
