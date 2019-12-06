@@ -23,6 +23,7 @@ use {
 
 // #[macro_use]
 use super::*;
+
 // use crate::foreign_obj_type;
 
 // pub struct MTLTexture { }
@@ -58,6 +59,13 @@ impl View {
 impl ViewRef {
 
     // weak open var delegate: MTKViewDelegate?
+    pub fn delegate(&self) -> Option<MTKViewDelegate> {
+        unimplemented!()
+    }
+
+    pub fn set_delegate(&self, new_value: Option<MTKViewDelegate>) {
+        unimplemented!()
+    }
 
     pub fn device(&self) -> Option<DeviceRef> {
         unsafe { msg_send![self, device] }
