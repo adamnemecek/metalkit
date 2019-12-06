@@ -2,7 +2,7 @@
 use {
     // cocoa::foundation::NSUInteger,
     core_graphics::{
-        geometry::CGSize,
+        geometry::{CGSize, CGRect},
         color_space::CGColorSpace,
     },
     metal::{
@@ -48,7 +48,7 @@ foreign_obj_type! {
 }
 
 impl View {
-    pub fn new<'a>() -> &'a ViewRef {
+    pub fn new<'a>(frame: CGRect, device: Option<DeviceRef>) -> &'a ViewRef {
         unsafe {
             let class = class!(MTKView);
             msg_send![class, new]
