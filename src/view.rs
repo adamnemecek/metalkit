@@ -1,25 +1,29 @@
 
-use cocoa::foundation::NSUInteger;
-// use metal::foreign_obj_type;
-use metal::{
-    CAMetalDrawable,
-    // CGColorSpace,
-    // CGSize,
-    // Double,
-    // Int,
-    MTLClearColor,
-    MTLDevice,
-    MTLPixelFormat,
-    MTLRenderPassDescriptor,
-    MTLTexture,
-    MTLTextureUsage,
-    // UInt32,
+use {
+    // cocoa::foundation::NSUInteger,
+    core_graphics::{
+        geometry::CGSize,
+        color_space::CGColorSpace,
+    },
+    metal::{
+        CAMetalDrawable,
+        // Double,
+        // Int,
+        MTLClearColor,
+        MTLDevice,
+        MTLPixelFormat,
+        MTLRenderPassDescriptor,
+        MTLTexture,
+        MTLTextureUsage,
+        DeviceRef
+        // UInt32,
+    }
 };
 
 // pub struct MTLTexture { }
 // pub struct MTLRenderPassDescriptor { }
 // pub struct MTLDevice { }
-pub struct CGColorSpace { }
+// pub struct CGColorSpace { }
 // pub struct CAMetalDrawable { }
 // pub struct MTLTextureUsage { }
 // pub struct MTLPixelFormat { }
@@ -27,7 +31,7 @@ pub struct CGColorSpace { }
 pub struct UInt32 { }
 pub struct Int { }
 pub struct Double { }
-pub struct CGSize { }
+// pub struct CGSize { }
 
 pub enum MTKView {}
 
@@ -50,11 +54,12 @@ impl ViewRef {
 
     // weak open var delegate: MTKViewDelegate?
 
-    pub fn device(&self) -> Option<MTLDevice> {
+    pub fn device(&self) -> Option<DeviceRef> {
+        // msg_send![self, device]
         unimplemented!()
     }
 
-    pub fn set_device(&self, new_value: Option<MTLDevice>) {
+    pub fn set_device(&self, new_value: Option<DeviceRef>) {
         unimplemented!()
     }
 
