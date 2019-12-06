@@ -65,7 +65,7 @@ impl ViewRef {
     }
 
     pub fn set_device(&self, new_value: Option<DeviceRef>) {
-        //impls: unsafe { msg_send![self, setDevice] }
+        //impls: unsafe { msg_send![self, setDevice: new_value] }
         unimplemented!()
     }
 
@@ -81,7 +81,7 @@ impl ViewRef {
     }
 
     pub fn set_framebuffer_only(&self, new_value: bool) {
-        //impls: unsafe { msg_send![self, setFramebufferOnly] }
+        //impls: unsafe { msg_send![self, setFramebufferOnly: new_value] }
         unimplemented!()
     }
 
@@ -92,7 +92,7 @@ impl ViewRef {
     }
 
     pub fn set_depth_stencil_attachment_texture_usage(&self, new_value: MTLTextureUsage) {
-        //impls: unsafe { msg_send![self, setDepthStencilAttachmentTextureUsage] }
+        //impls: unsafe { msg_send![self, setDepthStencilAttachmentTextureUsage: new_value] }
         unimplemented!()
     }
 
@@ -103,7 +103,7 @@ impl ViewRef {
     }
 
     pub fn set_multisample_color_attachment_texture_usage(&self, new_value: MTLTextureUsage) {
-        //impls: unsafe { msg_send![self, setMultisampleColorAttachmentTextureUsage] }
+        //impls: unsafe { msg_send![self, setMultisampleColorAttachmentTextureUsage: new_value] }
         unimplemented!()
     }
 
@@ -113,7 +113,7 @@ impl ViewRef {
     }
 
     pub fn set_presents_with_transaction(&self, new_value: bool) {
-        //impls: unsafe { msg_send![self, setPresentsWithTransaction] }
+        //impls: unsafe { msg_send![self, setPresentsWithTransaction: new_value] }
         unimplemented!()
     }
 
@@ -123,7 +123,7 @@ impl ViewRef {
     }
 
     pub fn set_color_pixel_format(&self, new_value: MTLPixelFormat) {
-        //impls: unsafe { msg_send![self, setColorPixelFormat] }
+        //impls: unsafe { msg_send![self, setColorPixelFormat: new_value] }
         unimplemented!()
     }
 
@@ -133,7 +133,7 @@ impl ViewRef {
     }
 
     pub fn set_depth_stencil_pixel_format(&self, new_value: MTLPixelFormat) {
-        //impls: unsafe { msg_send![self, setDepthStencilPixelFormat] }
+        //impls: unsafe { msg_send![self, setDepthStencilPixelFormat: new_value] }
         unimplemented!()
     }
 
@@ -143,7 +143,7 @@ impl ViewRef {
     }
 
     pub fn set_sample_count(&self, new_value: Int) {
-        //impls: unsafe { msg_send![self, setSampleCount] }
+        //impls: unsafe { msg_send![self, setSampleCount: new_value] }
         unimplemented!()
     }
 
@@ -153,7 +153,7 @@ impl ViewRef {
     }
 
     pub fn set_clear_color(&self, new_value: MTLClearColor) {
-        //impls: unsafe { msg_send![self, setClearColor] }
+        //impls: unsafe { msg_send![self, setClearColor: new_value] }
         unimplemented!()
     }
 
@@ -163,7 +163,7 @@ impl ViewRef {
     }
 
     pub fn set_clear_depth(&self, new_value: Double) {
-        //impls: unsafe { msg_send![self, setClearDepth] }
+        //impls: unsafe { msg_send![self, setClearDepth: new_value] }
         unimplemented!()
     }
 
@@ -173,7 +173,7 @@ impl ViewRef {
     }
 
     pub fn set_clear_stencil(&self, new_value: UInt32) {
-        //impls: unsafe { msg_send![self, setClearStencil] }
+        //impls: unsafe { msg_send![self, setClearStencil: new_value] }
         unimplemented!()
     }
 
@@ -206,7 +206,7 @@ impl ViewRef {
     }
 
     pub fn set_preferred_frames_per_second(&self, new_value: Int) {
-        //impls: unsafe { msg_send![self, setPreferredFramesPerSecond] }
+        //impls: unsafe { msg_send![self, setPreferredFramesPerSecond: new_value] }
         unimplemented!()
     }
 
@@ -216,7 +216,7 @@ impl ViewRef {
     }
 
     pub fn set_enable_setneeds_display(&self, new_value: bool) {
-        //impls: unsafe { msg_send![self, setEnableEetneedsDisplay] }
+        //impls: unsafe { msg_send![self, setEnableEetneedsDisplay: new_value] }
         unimplemented!()
     }
 
@@ -226,7 +226,7 @@ impl ViewRef {
     }
 
     pub fn set_autoresize_drawable(&self, new_value: bool) {
-        //impls: unsafe { msg_send![self, setAutoresizeDrawable] }
+        //impls: unsafe { msg_send![self, setAutoresizeDrawable: new_value] }
         unimplemented!()
     }
 
@@ -236,7 +236,7 @@ impl ViewRef {
     }
 
     pub fn set_drawable_size(&self, size: CGSize) {
-        //impls: unsafe { msg_send![self, setDrawableSize] }
+        //impls: unsafe { msg_send![self, setDrawableSize: new_value] }
         unimplemented!()
     }
 
@@ -260,7 +260,7 @@ impl ViewRef {
     }
 
     pub fn set_is_paused(&self, new_value: bool) {
-        //impls: unsafe { msg_send![self, setIsPaused] }
+        //impls: unsafe { msg_send![self, setIsPaused: new_value] }
         unimplemented!()
     }
 
@@ -271,7 +271,7 @@ impl ViewRef {
     }
 
     pub fn set_colorspace(&self, new_value: Option<CGColorSpace>) {
-        //impls: unsafe { msg_send![self, setColorspace] }
+        //impls: unsafe { msg_send![self, setColorspace: new_value] }
         unimplemented!()
     }
 
