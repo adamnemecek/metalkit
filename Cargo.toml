@@ -5,7 +5,7 @@ authors = ["Adam Nemecek <adamnemecek@gmail.com>"]
 edition = "2018"
 homepage = "https://github.com/adamnemecek/metalkit"
 repository = "https://github.com/adamnemecek/metalkit"
-description = "Rust wrapper around the MetalKit APIs"
+description = "Rust wrapper around the Apple MetalKit APIs"
 keywords = ["metal", "graphics", "bindings"]
 license = "MIT OR Apache-2.0"
 readme = "README.md"
@@ -13,3 +13,10 @@ readme = "README.md"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+metal = "*"
+cocoa = "0.19"
+foreign-types = "0.3"
+
+[dependencies.objc]
+version = "0.2.4"
+features = ["objc_exception"]
