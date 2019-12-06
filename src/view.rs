@@ -1,15 +1,29 @@
 
 use cocoa::foundation::NSUInteger;
 // use metal::foreign_obj_type;
+use metal::{
+    CAMetalDrawable,
+    // CGColorSpace,
+    // CGSize,
+    // Double,
+    // Int,
+    MTLClearColor,
+    MTLDevice,
+    MTLPixelFormat,
+    MTLRenderPassDescriptor,
+    MTLTexture,
+    MTLTextureUsage,
+    // UInt32,
+};
 
-pub struct MTLTexture { }
-pub struct MTLRenderPassDescriptor { }
-pub struct MTLDevice { }
+// pub struct MTLTexture { }
+// pub struct MTLRenderPassDescriptor { }
+// pub struct MTLDevice { }
 pub struct CGColorSpace { }
-pub struct CAMetalDrawable { }
-pub struct MTLTextureUsage { }
-pub struct MTLPixelFormat { }
-pub struct MTLClearColor { }
+// pub struct CAMetalDrawable { }
+// pub struct MTLTextureUsage { }
+// pub struct MTLPixelFormat { }
+// pub struct MTLClearColor { }
 pub struct UInt32 { }
 pub struct Int { }
 pub struct Double { }
