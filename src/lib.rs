@@ -8,6 +8,8 @@ extern crate foreign_types;
 #[macro_use]
 extern crate metal;
 
+mod macros;
+
 mod view;
 mod viewdelegate;
 

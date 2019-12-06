@@ -35,11 +35,11 @@ pub struct Double { }
 
 pub enum MTKView {}
 
-// foreign_obj_type! {
-    // type CType = MTKView;
+foreign_obj_type! {
+    type CType = MTKView;
     pub struct View;
     pub struct ViewRef;
-// }
+}
 
 impl View {
     pub fn new<'a>() -> &'a ViewRef {
@@ -51,8 +51,6 @@ impl View {
 }
 
 impl ViewRef {
-    // 
-    //
 
     // weak open var delegate: MTKViewDelegate?
 
