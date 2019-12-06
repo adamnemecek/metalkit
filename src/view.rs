@@ -17,8 +17,13 @@ use {
         MTLTextureUsage,
         DeviceRef
         // UInt32,
-    }
+    },
+
 };
+
+// #[macro_use]
+use super::*;
+// use crate::foreign_obj_type;
 
 // pub struct MTLTexture { }
 // pub struct MTLRenderPassDescriptor { }
