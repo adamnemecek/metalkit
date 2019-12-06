@@ -67,11 +67,11 @@ impl ViewRef {
         unimplemented!()
     }
 
-    pub fn device(&self) -> Option<DeviceRef> {
+    pub fn device(&self) -> Option<&DeviceRef> {
         unsafe { msg_send![self, device] }
     }
 
-    pub fn set_device(&self, new_value: Option<DeviceRef>) {
+    pub fn set_device(&self, new_value: Option<&DeviceRef>) {
         unsafe { msg_send![self, setDevice: new_value] }
     }
 
