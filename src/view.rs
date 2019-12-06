@@ -1,27 +1,27 @@
 
 use cocoa::foundation::NSUInteger;
+// use metal::foreign_obj_type;
 
-
-struct MTLTexture { }
-struct MTLRenderPassDescriptor { }
-struct MTLDevice { }
-struct CGColorSpace { }
-struct CAMetalDrawable { }
-struct MTLTextureUsage { }
-struct MTLPixelFormat { }
-struct MTLClearColor { }
-struct UInt32 { }
-struct Int { }
-struct Double { }
-struct CGSize { }
+pub struct MTLTexture { }
+pub struct MTLRenderPassDescriptor { }
+pub struct MTLDevice { }
+pub struct CGColorSpace { }
+pub struct CAMetalDrawable { }
+pub struct MTLTextureUsage { }
+pub struct MTLPixelFormat { }
+pub struct MTLClearColor { }
+pub struct UInt32 { }
+pub struct Int { }
+pub struct Double { }
+pub struct CGSize { }
 
 pub enum MTKView {}
 
-foreign_obj_type! {
-    type CType = MTKView;
+// foreign_obj_type! {
+    // type CType = MTKView;
     pub struct View;
     pub struct ViewRef;
-}
+// }
 
 impl View {
     pub fn new<'a>() -> &'a ViewRef {
