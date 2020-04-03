@@ -54,7 +54,7 @@ foreign_obj_type! {
 
 
 impl MetalView {
-    pub fn new<'a>(frame: CGRect, device: Option<DeviceRef>) -> &'a MetalViewRef {
+    pub fn new<'a>(frame: CGRect, device: Option<&DeviceRef>) -> &'a MetalViewRef {
         unsafe {
             let class = class!(MTKView);
             msg_send![class, new]
