@@ -5,6 +5,9 @@ use {
         geometry::{CGSize, CGRect},
         color_space::CGColorSpace,
     },
+    cocoa::{
+        // NSView
+    },
     metal::{
         // CAMetalDrawable,
         CoreAnimationDrawableRef,
@@ -27,18 +30,6 @@ use {
 // #[macro_use]
 use super::*;
 
-
-
-// use crate::foreign_obj_type;
-
-// pub struct MTLTexture { }
-// pub struct MTLRenderPassDescriptor { }
-// pub struct MTLDevice { }
-// pub struct CGColorSpace { }
-// pub struct CAMetalDrawable { }
-// pub struct MTLTextureUsage { }
-// pub struct MTLPixelFormat { }
-// pub struct MTLClearColor { }
 pub struct UInt32 { }
 pub struct Int { }
 pub struct Double { }
@@ -52,6 +43,7 @@ foreign_obj_type! {
     pub struct ViewRef;
 }
 // type ParentType = cocoa::NSView;
+
 
 impl View {
     pub fn new<'a>(frame: CGRect, device: Option<DeviceRef>) -> &'a ViewRef {
