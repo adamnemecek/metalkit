@@ -6,16 +6,19 @@ use {
         color_space::CGColorSpace,
     },
     metal::{
-        CAMetalDrawable,
+        // CAMetalDrawable,
+        CoreAnimationDrawableRef,
         // Double,
         // Int,
         MTLClearColor,
         MTLDevice,
         MTLPixelFormat,
-        MTLRenderPassDescriptor,
-        MTLTexture,
+        // MTLRenderPassDescriptor,
+        RenderPassDescriptorRef,
+        // MTLTexture,
         MTLTextureUsage,
-        DeviceRef
+        DeviceRef,
+        TextureRef,
         // UInt32,
     },
 
@@ -42,8 +45,6 @@ pub struct Double { }
 // pub struct CGSize { }
 
 pub enum MTKView {}
-
-// use
 
 foreign_obj_type! {
     type CType = MTKView;
@@ -117,8 +118,6 @@ impl ViewRef {
         unsafe { msg_send![self, setDrawableSize: new_value] }
     }
 
-    //get only
-    //@available(OSX 10.15, *)
     pub fn preferred_drawable_size(&self) -> CGSize {
         unsafe { msg_send![self, preferredDrawableSize] }
      }
@@ -147,7 +146,6 @@ impl ViewRef {
         unsafe { msg_send![self, setDepthStencilPixelFormat: new_value] }
     }
 
-    //@available(OSX 10.15, *)
     pub fn depth_stencil_attachment_texture_usage(&self) -> MTLTextureUsage {
         unsafe { msg_send![self, depthStencilAttachmentTextureUsage] }
     }
@@ -190,22 +188,22 @@ impl ViewRef {
     }
 
     //get only
-    pub fn current_render_pass_descriptor(&self) -> Option<MTLRenderPassDescriptor> {
+    pub fn current_render_pass_descriptor(&self) -> Option<&RenderPassDescriptorRef> {
         unsafe { msg_send![self, currentRenderPassDescriptor] }
     }
 
     //get only
-    pub fn current_drawable(&self) -> Option<CAMetalDrawable> {
+    pub fn current_drawable(&self) -> Option<&CoreAnimationDrawableRef> {
         unsafe { msg_send![self, currentDrawable] }
     }
 
     //get only
-    pub fn depth_stencil_texture(&self) -> Option<MTLTexture> {
+    pub fn depth_stencil_texture(&self) -> Option<&TextureRef> {
         unsafe { msg_send![self, depthStencilTexture] }
     }
 
    //get only
-    pub fn multisample_color_texture(&self) -> Option<MTLTexture> {
+    pub fn multisample_color_texture(&self) -> Option<&TextureRef> {
         unsafe { msg_send![self, multisampleColorTexture] }
     }
 
