@@ -35,18 +35,26 @@ pub struct Int { }
 pub struct Double { }
 // pub struct CGSize { }
 
+pub enum NSView {}
+foreign_obj_type! {
+    type CType = NSView;
+    pub struct View;
+    pub struct ViewRef;
+}
+
 pub enum MTKView {}
 
 foreign_obj_type! {
     type CType = MTKView;
-    pub struct View;
-    pub struct ViewRef;
+    pub struct MetalView;
+    pub struct MetalViewRef;
+    type ParentType = ViewRef;
 }
-// type ParentType = cocoa::NSView;
 
 
-impl View {
-    pub fn new<'a>(frame: CGRect, device: Option<DeviceRef>) -> &'a ViewRef {
+
+impl MetalView {
+    pub fn new<'a>(frame: CGRect, device: Option<DeviceRef>) -> &'a MetalViewRef {
         unsafe {
             let class = class!(MTKView);
             msg_send![class, new]
@@ -54,7 +62,7 @@ impl View {
     }
 }
 
-impl ViewRef {
+impl MetalViewRef {
 
     // weak open var delegate: MTKViewDelegate?
     pub fn delegate(&self) -> Option<MTKViewDelegate> {
