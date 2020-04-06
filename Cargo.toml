@@ -13,12 +13,17 @@ readme = "README.md"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-cocoa = "0.19"
-core-graphics = "0.17.3"
+cocoa = "0.20"
+core-graphics = "0.19"
 foreign-types = "0.3"
 metal = "*"
-
 
 [dependencies.objc]
 version = "0.2.4"
 features = ["objc_exception"]
+
+[dev-dependencies]
+winit = "0.22"
+
+[[example]]
+name = "window"

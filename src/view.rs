@@ -86,7 +86,6 @@ impl MetalViewRef {
         unsafe { msg_send![self, setColorPixelFormat: new_value] }
     }
 
-    //@available(OSX 10.12, *)
     pub fn colorspace(&self) -> Option<CGColorSpace> {
         unsafe { msg_send![self, colorspace] }
     }
