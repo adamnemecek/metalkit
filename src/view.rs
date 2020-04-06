@@ -9,10 +9,7 @@ use {
         // NSView
     },
     metal::{
-        // CAMetalDrawable,
         CoreAnimationDrawableRef,
-        // Double,
-        // Int,
         MTLClearColor,
         MTLDevice,
         MTLPixelFormat,
@@ -22,7 +19,6 @@ use {
         MTLTextureUsage,
         DeviceRef,
         TextureRef,
-        // UInt32,
     },
 
 };
@@ -33,7 +29,6 @@ use super::*;
 pub struct UInt32 { }
 pub struct Int { }
 pub struct Double { }
-// pub struct CGSize { }
 
 pub enum NSView {}
 foreign_obj_type! {
@@ -50,8 +45,6 @@ foreign_obj_type! {
     pub struct MetalViewRef;
     type ParentType = ViewRef;
 }
-
-
 
 impl MetalView {
     pub fn new<'a>(frame: CGRect, device: Option<&DeviceRef>) -> &'a MetalViewRef {
@@ -178,7 +171,6 @@ impl MetalViewRef {
         unsafe { msg_send![self, setSampleCount: new_value] }
     }
 
-    //@available(OSX 10.15, *)
     pub fn multisample_color_attachment_texture_usage(&self) -> MTLTextureUsage {
         unsafe { msg_send![self, multisampleColorAttachmentTextureUsage] }
     }
@@ -187,22 +179,18 @@ impl MetalViewRef {
         unsafe { msg_send![self, setMultisampleColorAttachmentTextureUsage: new_value] }
     }
 
-    //get only
     pub fn current_render_pass_descriptor(&self) -> Option<&RenderPassDescriptorRef> {
         unsafe { msg_send![self, currentRenderPassDescriptor] }
     }
 
-    //get only
     pub fn current_drawable(&self) -> Option<&CoreAnimationDrawableRef> {
         unsafe { msg_send![self, currentDrawable] }
     }
 
-    //get only
     pub fn depth_stencil_texture(&self) -> Option<&TextureRef> {
         unsafe { msg_send![self, depthStencilTexture] }
     }
 
-   //get only
     pub fn multisample_color_texture(&self) -> Option<&TextureRef> {
         unsafe { msg_send![self, multisampleColorTexture] }
     }
