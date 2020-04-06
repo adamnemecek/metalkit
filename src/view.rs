@@ -58,11 +58,11 @@ impl MetalView {
 impl MetalViewRef {
 
     // weak open var delegate: MTKViewDelegate?
-    pub fn delegate(&self) -> Option<MTKViewDelegate> {
+    pub fn delegate(&self) -> Option<MetalViewDelegate> {
         unsafe { msg_send![self, delegate] }
     }
 
-    pub fn set_delegate(&self, new_value: Option<MTKViewDelegate>) {
+    pub fn set_delegate(&self, new_value: Option<MetalViewDelegate>) {
         unsafe { msg_send![self, setDelegate: new_value] }
     }
 
