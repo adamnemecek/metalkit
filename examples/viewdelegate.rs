@@ -15,5 +15,6 @@ fn main() {
     let device = metal::Device::system_default().unwrap();
     let v = MetalView::new(rect, Some(&device));
 
-    println!("{}", v.framebuffer_only());
+    // println!("{}", v.framebuffer_only());
+    // println!("{}", v.);
 }
