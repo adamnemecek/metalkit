@@ -55,42 +55,6 @@ fn prepare_render_pass_descriptor(descriptor: &RenderPassDescriptorRef, texture:
     color_attachment.set_store_action(MTLStoreAction::Store);
 }
 
-fn metal_layer(
-    device: &metal::Device,
-    view: cocoa_id,
-    size: CGSize,
-) -> CoreAnimationLayer {
-
-    let layer = CoreAnimationLayer::new();
-    layer.set_device(device);
-    layer.set_pixel_format(MTLPixelFormat::BGRA8Unorm);
-    layer.set_presents_with_transaction(false);
-
-    unsafe {
-        view.setWantsLayer(YES);
-        view.setLayer(mem::transmute(layer.as_ref()));
-    }
-
-    layer.set_drawable_size(size);
-
-    layer
-}
-
-fn winit_metal_layer(
-    device: &metal::Device,
-    window: &winit::window::Window,
-) -> CoreAnimationLayer {
-
-    let view = window.ns_view() as cocoa_id;
-    let draw_size = window.inner_size();
-    let size = CGSize::new(draw_size.width as f64, draw_size.height as f64);
-
-    metal_layer(
-        device,
-        view,
-        size
-    )
-}
 
 fn main() {
     let events_loop = winit::event_loop::EventLoop::new();
@@ -118,7 +82,7 @@ fn main() {
     // let draw_size = window.inner_size();
     // layer.set_drawable_size(CGSize::new(draw_size.width as f64, draw_size.height as f64));
 
-    let layer = winit_metal_layer(&device, &window);
+    let layer = create_winit_metal_layer(&device, &window);
 
     let library = device
         .new_library_with_file("examples/window/shaders.metallib")

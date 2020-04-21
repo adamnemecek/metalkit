@@ -15,10 +15,14 @@ extern crate metal;
 
 mod view;
 mod viewdelegate;
+mod texture_loader;
+mod winit_ext;
 
 pub use {
     view::*,
-    viewdelegate::*
+    viewdelegate::*,
+    texture_loader::*,
+    winit_ext::*,
 };
 
 use std::os::raw::c_void;

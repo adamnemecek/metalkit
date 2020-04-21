@@ -17,13 +17,14 @@ cocoa = "0.19"
 core-graphics = "0.17.3"
 foreign-types = "0.3"
 metal = "*"
+winit = "0.22"
 
 [dependencies.objc]
 version = "0.2.4"
 features = ["objc_exception"]
 
-[dev-dependencies]
-winit = "0.22"
+# [dev-dependencies]
+
 
 [[example]]
 name = "window"
